@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Наші кімнати</title>
+{% endblock title %}
+
+{% block content %}
+
+<div class="container min-vh-100 pb-5">
+    <h1 class="text-center my-4">Наші кімнати</h1>
+    <div class="card h-100" style="">
+        <img src="{{ url_for('static', filename='img/rooms/'+ room[3]) }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{room[1]}}</h5>
+            <p class="card-text">{{room[2]}} грн</p>
+            <a href="#" class="btn btn-primary">Забронювати</a>
+        </div>
+    </div>
+
+    {% endblock content %}
