@@ -6,4 +6,9 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
     # івіфалхфлввзпзф
+
+@app.route("/rooms")
+def rooms():
+    return render_template("rooms.html")
+
 app.run(debug=True)

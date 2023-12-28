@@ -12,3 +12,10 @@ class PetHotelDB:
     def close(self):
         self.cursor.close()
         self.conn.close()
+    
+    def get_all_rooms(self):
+        self.connect()
+        self.cursor.execute(''' SELECT * FROM rooms ''')
+        data = self.cursor.fetchall()
+        self.close()
+        return data
