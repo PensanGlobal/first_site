@@ -12,12 +12,16 @@
         {% for petsitter in petsitters %}
         <div class="col">
             <div class="card h-100" style="">
-                <img src="{{ url_for('static', filename='img/petsitters/'+ petsitter[3]) }}" class="card-img-top" alt="...">
+                <img src="{{ url_for('static', filename='img/petsitters/'+ petsitter[3]) }}" class="card-img-top"
+                    alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{petsitter[1]}} {{petsitter[2]}}</h5>
                     <p class="card-text">Вік: {{petsitter[4]}} р.</p>
                     <p class="card-text">Місто: {{petsitter[5]}} </p>
-                    <a href="#" class="btn btn-primary stretched-link">Обрати</a>
+                    <form action="" method="post">
+                        <input class="d-none" name="petsitter_id" type="text" value="{{petsitter[0]}}">
+                        <button type="submit" href="#" class="btn btn-primary">Обрати</button>
+                    </form>
                 </div>
             </div>
         </div>

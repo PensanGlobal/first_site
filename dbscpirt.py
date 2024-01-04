@@ -33,3 +33,9 @@ class PetHotelDB:
         data = self.cursor.fetchall()
         self.close()
         return data
+    
+    def new_booking(self):
+        self.connect()
+        self.cursor.execute(''' INSERT INTO bookings() VALUES() ''')
+        self.conn.commit()
+        self.close()
