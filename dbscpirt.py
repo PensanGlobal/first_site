@@ -22,7 +22,14 @@ class PetHotelDB:
     
     def get_room(self,room_id):
         self.connect()
-        self.cursor.execute(''' SELECT * FROM rooms WHERE id==(?)''', [room_id])
+        self.cursor.execute(''' SELECT * FROM rooms WHERE id=(?)''', [room_id])
         data = self.cursor.fetchone()
+        self.close()
+        return data
+    
+    def get_all_pet_sitters(self):
+        self.connect()
+        self.cursor.execute(''' SELECT * FROM pet_sitters ''')
+        data = self.cursor.fetchall()
         self.close()
         return data
