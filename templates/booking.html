@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Бронювання</title>
+{% endblock title %}
+
+{% block content %}
+
+<div class="container min-vh-100 py-5">
+
+    <div class="row g-4">
+        <div class="col-6 col-lg-2">
+            <h4>Обраний номер</h4>
+            <div class="card h-100" style="">
+                <img src="{{ url_for('static', filename='img/rooms/'+ room[3]) }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <span>Адреса:</span>
+                    <h5 class="card-title">{{room[4]}}, {{room[5]}}</h5>
+                    <span>Опис:</span>
+                    <p>{{room[6]}}</p>
+                    <span>Вартість:</span>
+                    <h3 class="card-text">{{room[2]}} грн</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-2">
+            <h4>Обрана Нянька</h4>
+            <div class="card h-100" style="">
+                <img src="{{ url_for('static', filename='img/petsitters/'+ petsitter[3]) }}" class="card-img-top"
+                    alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{petsitter[1]}} {{petsitter[2]}}</h5>
+                    <p class="card-text">Вік: {{petsitter[4]}} р.</p>
+                    <p class="card-text">Місто: {{petsitter[5]}} </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-12 col-lg-8">
+            <h1 class="text-center my-4">Оформлення бронювання</h1>
+            <form action="" method="post">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Ваше ім'я</label>
+                    <input required name="name" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Ваше прізвище</label>
+                    <input required name="surname" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Ім'я вашого улюбленця</label>
+                    <input required name="petname" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Номер елефону</label>
+                    <input required name="phone" type="tel" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Ваш email</label>
+                    <input required name="email" type="email" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Додаткова інформація</label>
+                    <textarea name="info" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Підтвердити</button>
+            </form>
+        </div>
+    </div>
+    {% endblock content %}

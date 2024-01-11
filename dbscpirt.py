@@ -34,6 +34,13 @@ class PetHotelDB:
         self.close()
         return data
     
+    def get_petsitter(self,petsitter_id):
+        self.connect()
+        self.cursor.execute(''' SELECT * FROM pet_sitters WHERE id=(?)''', [petsitter_id])
+        data = self.cursor.fetchone()
+        self.close()
+        return data
+    
     def new_booking(self):
         self.connect()
         self.cursor.execute(''' INSERT INTO bookings() VALUES() ''')
